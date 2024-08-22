@@ -35,7 +35,7 @@ getMapping (x:y:[]) = (x, y)
 getMapping _ = error "invalid input"
 
 replaceString :: Map.Map Char Char -> String -> String
-replaceString m s = foldr (\c a -> (Map.findWithDefault 'x' c m):a) "" s
+replaceString m = foldr (\c a -> (Map.findWithDefault 'x' c m):a) ""
 
 pad :: Map.Map Char Char -> Int -> String -> (String, String)
 pad m n s = (s, replaceString m p)
